@@ -379,7 +379,7 @@ break;
 case 'saring' : 
 		echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Ilomata</h1>
+                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -539,7 +539,7 @@ break;
 case 'gandanama' :
 					echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Ilomata</h1>
+                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -619,7 +619,7 @@ break;
 case 'gandanik' :
 					echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Ilomata</h1>
+                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
