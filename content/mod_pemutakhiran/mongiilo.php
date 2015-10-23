@@ -239,7 +239,7 @@ case 'edit' :
 				$t="";
 				if($stskawin == 'Belum'){
 					$r="checked";
-				}else if($stskawin == 'Kawin'){
+				}else if($stskawin == 'Sudah'){
 					$s="checked";
 				}else if($stskawin == 'Pernah'){
 					$t="checked";
