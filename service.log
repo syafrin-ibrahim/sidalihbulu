@@ -1,0 +1,81 @@
+These Windows services are started:
+
+   AMD External Events Utility
+   Apache2.2
+   Application Experience
+   Application Layer Gateway Service
+   Avira Service Host
+   Background Intelligent Transfer Service
+   Base Filtering Engine
+   CNG Key Isolation
+   COM+ Event System
+   Computer Browser
+   Connectify
+   Cryptographic Services
+   DCOM Server Process Launcher
+   Desktop Window Manager Session Manager
+   DHCP Client
+   Diagnostic Policy Service
+   Diagnostic Service Host
+   Diagnostic System Host
+   Distributed Link Tracking Client
+   DNS Client
+   Extensible Authentication Protocol
+   Group Policy Client
+   IHProtect Service
+   IKE and AuthIP IPsec Keying Modules
+   Internet Connection Sharing (ICS)
+   IP Helper
+   IPsec Policy Agent
+   Multimedia Class Scheduler
+   mysql
+   Network Connections
+   Network List Service
+   Network Location Awareness
+   Network Store Interface Service
+   Offline Files
+   Plug and Play
+   Portable Device Enumerator Service
+   Power
+   Print Spooler
+   Program Compatibility Assistant Service
+   Protexis Licensing V2
+   Remote Access Connection Manager
+   Remote Procedure Call (RPC)
+   RPC Endpoint Mapper
+   Secure Socket Tunneling Protocol Service
+   Security Accounts Manager
+   Security Center
+   Server
+   Shell Hardware Detection
+   SSDP Discovery
+   Superfetch
+   System Event Notification Service
+   Task Scheduler
+   TCP/IP NetBIOS Helper
+   Telephony
+   Themes
+   UPnP Device Host
+   User Profile Service
+   WajaInterEnhancer Service
+   Windows Audio
+   Windows Audio Endpoint Builder
+   Windows Defender
+   Windows Driver Foundation - User-mode Driver Framework
+   Windows Event Log
+   Windows Firewall
+   Windows Font Cache Service
+   Windows Image Acquisition (WIA)
+   Windows Installer
+   Windows Management Instrumentation
+   Windows Media Player Network Sharing Service
+   Windows Search
+   Windows Time
+   Windows Update
+   WindowsMangerProtect Service
+   WinHTTP Web Proxy Auto-Discovery Service
+   WLAN AutoConfig
+   Workstation
+
+The command completed successfully.
+
