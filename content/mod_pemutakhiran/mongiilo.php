@@ -63,7 +63,7 @@ switch($act){
 						<th>#</th>
 					</tr></thead><tbody>";
 					$no=1;
-			$query="select * from pemilih where ID_DESA=2 and SARING=0";
+			$query="select * from pemilih where ID_DESA=2 and SARING=0 order by NKK asc";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
@@ -603,7 +603,7 @@ case 'gandanama' :
 				
 				<td>".$data['NAMA']."</td>
 				<td>".$data['JML']."</td>
-				<td align='center'><a>saring</i></a></td>
+				<td align='center'><a href='lihat.php?k=".$data['NAMA']."'>lihat</i></a></td>
 				<td align='center'></td>
 				<td align='center'></td>
 			</tr>";
