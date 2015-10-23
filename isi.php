@@ -31,9 +31,16 @@ include"config/library.php";
 			include"content/mod_pemutakhiran/sukamakmur.php";
 		}else if($_GET['syafrin']=='import'){
 			include"content/mod_import/import.php";
+		}else if($_GET['syafrin'] == 'P_owata1'){
+			include"content/mod_pemutakhiran/owata1.php";
+		}else if($_GET['syafrin'] == 'P_owata2'){
+			include"content/mod_pemutakhiran/owata2.php";
+		}else if($_GET['syafrin'] == 'P_owata12'){
+			include"content/mod_pemutakhiran/owata12.php";
 		}
 
 /*}
+syafrin=P_owata2
 else if($_GET['syafrin']=='inbox'){
   include 'content/mod_inbox/inbox.php';
 }

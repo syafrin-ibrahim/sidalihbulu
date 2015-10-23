@@ -306,7 +306,18 @@
                                     <a href="?syafrin=P_mongiiloutara">Mongiilo Utara</a>
                                 </li>
 								<li>
-                                    <a href="?syafrin=P_owata">Owata</a>
+                                    <a href="#">Owata<span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="?syafrin=P_owata1">Tps 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="?syafrin=P_owata2">Tps 2</a>
+                                        </li>
+										 <li>
+                                            <a href="?syafrin=P_owata12">gabung</a>
+                                        </li>
+                                    </ul>									
                                 </li>
 								<li>
 									<a href="?syafrin=P_pilolaheya">Pilolaheya</a>
