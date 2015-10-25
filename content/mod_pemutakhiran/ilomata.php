@@ -603,7 +603,7 @@ case 'gandanama' :
 				
 				<td>".$data['NAMA']."</td>
 				<td>".$data['JML']."</td>
-				<td align='center'><a>saring</i></a></td>
+				<td align='center'><a href='?syafrin=P_ilomata&act=lihatgnama&k=".$data['NAMA']."'>lihat</a></td>
 				<td align='center'></td>
 				<td align='center'></td>
 			</tr>";
@@ -684,7 +684,7 @@ case 'gandanik' :
 				<td>".$data['NIK']."</td>
 				<td>".$data['NAMA']."</td>
 				<td>".$data['JML']."</a></td>
-				<td align='center'></td>
+				<td align='center'><td align='center'><a href='?syafrin=P_ilomata&act=lihatgnik&k=".$data['NIK']."'>lihat</a></td></td>
 				<td align='center'></td>
 			</tr>";
 			$no++;
@@ -695,6 +695,171 @@ case 'gandanik' :
 			</div>
 		  </div>
 		</div></div>";
+break;
+
+case 'lihatgnik' : 
+			echo"<div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='page-header'>Data Pemilih Ganda NIK </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_ilomata'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick='self.history.back()'>kembali</button>
+			
+			<br/><br/>
+			<div class='row'>
+            <div class='col-lg-12'>
+			<div class='panel panel-default'>
+				<div class='panel-heading'>
+                            Desa Ilomata
+                </div>";
+				$state=isset($_GET['state']) ? $_GET['state'] : '';
+				if($state == 'berhasil'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data Berhasil disimpan
+							</div>";
+				}else if($state == 'gagal'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data gagal disimpan
+							</div>";
+				}else if($state == 'ubah'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil diubah
+							</div>";
+				}else if($state == 'hapus'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dihapus
+							</div>";
+				}else if($state == 'kembali'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dikembalikan
+							</div>";
+				}
+				
+                echo"<div class='table-responsive'>
+			<table class='table table-striped table-bordered table-hover' id='dataTables-example'>
+				<thead>
+					<tr>
+						<th>no</th>
+						
+						<th>NKK</th>
+						<th>NIK</th>
+						<th>NAMA</th>
+						<th>TTL</th>
+						<th>ALAMAT</th>
+					</tr></thead><tbody>";
+					$no=1;
+			$k=$_GET['k'];
+			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=1 and SARING=0 and NIK='$k'");
+			
+			while($data=mysqli_fetch_array($tampilku)){
+				echo"<tr>
+				<td>$no</td>
+				
+				<td>".$data['NKK']."</td>
+				<td>".$data['NIK']."</td>
+				<td align='center'>".$data['NAMA']."</td>
+				<td align='center'>".$data['TTL']."</td>
+				<td align='center'>".$data['ALAMAT']."</td>
+			</tr>";
+			$no++;
+			}
+			echo"</tbody></table>
+			</div>
+			  </div>
+			</div>
+		  </div>
+		</div></div>";
+
+break;
+case 'lihatgnama' : 
+			echo"<div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='page-header'>Data Pemilih Ganda Nama </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_ilomata'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick='self.history.back()'>kembali</button>
+			
+			<br/><br/>
+			<div class='row'>
+            <div class='col-lg-12'>
+			<div class='panel panel-default'>
+				<div class='panel-heading'>
+                            Desa Mongiilo
+                </div>";
+				$state=isset($_GET['state']) ? $_GET['state'] : '';
+				if($state == 'berhasil'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data Berhasil disimpan
+							</div>";
+				}else if($state == 'gagal'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data gagal disimpan
+							</div>";
+				}else if($state == 'ubah'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil diubah
+							</div>";
+				}else if($state == 'hapus'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dihapus
+							</div>";
+				}else if($state == 'kembali'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dikembalikan
+							</div>";
+				}
+				
+                echo"<div class='table-responsive'>
+			<table class='table table-striped table-bordered table-hover' id='dataTables-example'>
+				<thead>
+					<tr>
+						<th>no</th>
+						
+						<th>NKK</th>
+						<th>NIK</th>
+						<th>NAMA</th>
+						<th>TTL</th>
+						<th>ALAMAT</th>
+					</tr></thead><tbody>";
+					$no=1;
+			$k=$_GET['k'];
+			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=1 and SARING=0 and NAMA like '%$k%'");
+			
+			while($data=mysqli_fetch_array($tampilku)){
+				echo"<tr>
+				<td>$no</td>
+				
+				<td>".$data['NKK']."</td>
+				<td>".$data['NIK']."</td>
+				<td align='center'>".$data['NAMA']."</td>
+				<td align='center'>".$data['TTL']."</td>
+				<td align='center'>".$data['ALAMAT']."</td>
+			</tr>";
+			$no++;
+			}
+			echo"</tbody></table>
+			</div>
+			  </div>
+			</div>
+		  </div>
+		</div></div>";
+
 break;
 }
 ?>
