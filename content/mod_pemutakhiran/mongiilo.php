@@ -669,7 +669,7 @@ case 'gandanik' :
 						<th>NAMA</th>
 						<th>JML</th>
 						<th>#</th>
-						<th>#</th>
+						
 					</tr></thead><tbody>";
 					$no=1;
 			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
@@ -678,12 +678,10 @@ case 'gandanik' :
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
-				
-				<td>".$data['NIK']."</td>
+				<th>".$data['NIK']."</th>
 				<td>".$data['NAMA']."</td>
-				<td>".$data['JML']."</a></td>
-				<td align='center'></td>
-				<td align='center'></td>
+				<td>".$data['JML']."</td>
+				<td align='center'><a href='?syafrin=P_mongiilo&act=lihatgnama&k=".$data['NIK']."'>lihat</a></td>
 			</tr>";
 			$no++;
 			}
