@@ -63,7 +63,7 @@ switch($act){
 						<th>#</th>
 					</tr></thead><tbody>";
 					$no=1;
-			$query="select * from pemilih where ID_DESA=6 and SARING=0";
+			$query="select * from pemilih where ID_DESA=6 and SARING=0 order by NKK asc";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
