@@ -6,7 +6,7 @@ include"../../config/excel_reader2.php";
 //membaca file yang di upload
 //error_reporting(0);
 if(isset($_POST['simpan'])){
-ini_set('max_execution_time', 300);
+ini_set('max_execution_time', 600);
 $sukses =0;
 $gagal=0;
 $mod = isset($_FILES['file']['tmp_name']) ? $_FILES['file']['tmp_name'] : '';

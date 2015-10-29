@@ -325,6 +325,9 @@
 								<li>
 									<a href="?syafrin=P_sukamakmur">Suka Makmur</a>
 								</li>
+								<li>
+									<a href="?syafrin=P_bulu">Bulango Ulu</a>
+								</li>
 								
 							</ul>
                         </li>

@@ -37,6 +37,8 @@ include"config/library.php";
 			include"content/mod_pemutakhiran/owata2.php";
 		}else if($_GET['syafrin'] == 'P_owata12'){
 			include"content/mod_pemutakhiran/owata12.php";
+		}else if($_GET['syafrin'] == 'P_bulu'){
+			include"content/mod_pemutakhiran/kecamatan.php";
 		}
 
 /*}
