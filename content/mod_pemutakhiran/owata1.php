@@ -756,13 +756,14 @@ case 'lihatgnik' :
 					$no=1;
 			$k=$_GET['k'];
 			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
-			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and SARING=0 and NIK='$k'");
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and TPS=1 and SARING=0 and NIK='$k'");
 			
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
-				<td align='center'>".$data['NIK']."</td>
+				
 				<td align='center'>".$data['NKK']."</td>
+				<td align='center'>".$data['NIK']."</td>
 				<td align='center'>".$data['NAMA']."</td>
 				<td align='center'>".$data['TTL']."</td>
 				<td align='center'>".$data['ALAMAT']."</td>
@@ -838,7 +839,7 @@ case 'lihatgnama' :
 					$no=1;
 			$k=$_GET['k'];
 			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
-			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and SARING=0 and NAMA like '%$k%'");
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and TPS=1 and SARING=0 and NAMA like '%$k%'");
 			
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>

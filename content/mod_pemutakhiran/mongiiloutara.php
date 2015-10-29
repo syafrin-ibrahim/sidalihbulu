@@ -758,8 +758,9 @@ case 'lihatgnik' :
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
-				<td align='center'>".$data['NIK']."</td>
+				
 				<td align='center'>".$data['NKK']."</td>
+				<td align='center'>".$data['NIK']."</td>
 				<td align='center'>".$data['NAMA']."</td>
 				<td align='center'>".$data['TTL']."</td>
 				<td align='center'>".$data['ALAMAT']."</td>
