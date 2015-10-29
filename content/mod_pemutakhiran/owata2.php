@@ -672,7 +672,7 @@ case 'gandanik' :
 						
 					</tr></thead><tbody>";
 					$no=1;
-			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=4 and TPS=2 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=4 and SARING=0";
+			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=4 and TPS=2 and NIK!=0 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=4 and SARING=0";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){

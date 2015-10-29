@@ -18,8 +18,12 @@ switch($act){
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'>
-                            Daftar Phone Book
+				<div class='panel-heading'>";
+					$queryx="select * from pemilih where ID_DESA=3 and SARING=0 order by NKK asc";
+					$gh=mysqli_query($konek, $queryx);
+					$jml=mysqli_num_rows($gh);
+					
+                 echo"    Jumlah Daftar Pemilih $jml
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -54,6 +58,7 @@ switch($act){
 				<thead>
 					<tr>
 						<th>no</th>
+						<th>DP ID</th>
 						<th>nkk</th>
 						<th>nik</th>
 						<th>nama</th>
@@ -63,12 +68,13 @@ switch($act){
 						<th>#</th>
 					</tr></thead><tbody>";
 					$no=1;
-			$query="select * from pemilih where ID_DESA=3 and SARING=0 order by NKK asc";
+			$query="select * from pemilih where ID_DESA=3 and SARING=0 order by DP_ID";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
+				<td>".$data['DP_ID']."</td>
 				<td>".$data['NKK']."</td>
 				<td>".$data['NIK']."</td>
 				<td>".$data['NAMA']."</td>
@@ -551,7 +557,7 @@ case 'gandanama' :
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Daftar Phone Book
+                            Daftar Pemilih Nama Ganda
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -629,7 +635,7 @@ case 'gandanik' :
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Daftar Phone Book
+                            Daftar Pemilih Ganda Nik
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -672,7 +678,7 @@ case 'gandanik' :
 						
 					</tr></thead><tbody>";
 					$no=1;
-			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=3 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=3 and SARING=0";
+			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=3 and SARING=0 and NIK!=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=3 and SARING=0";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
