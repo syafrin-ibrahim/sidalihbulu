@@ -1,25 +1,25 @@
 <?php
 //include"../../../config/sambung.php";
-$go="content/mod_pemutakhiran/aksimongiilo.php";
+$go="content/mod_pemutakhiran/aksimu.php";
 $act=isset($_GET['act']) ? $_GET['act'] : '';
 switch($act){
 	default :
 			echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
+                    <h1 class='page-header'>Data Pemilih Owata Tps 1 dan 2</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo&act=tambah'>input data pemilih</button>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo&act=saring'>pemilih tersaring</button>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo&act=gandanik'>pemilih ganda nik</button>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo&act=gandanama'>pemilih nama sama</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=tambah'>input data pemilih</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=saring'>pemilih tersaring</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=gandanik'>pemilih ganda nik</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=gandanama'>pemilih nama sama</button>
 			<br/><br/>
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Daftar Phone Book
+                            Desa Owata
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -56,6 +56,7 @@ switch($act){
 						<th>no</th>
 						<th>nkk</th>
 						<th>nik</th>
+						
 						<th>nama</th>
 						<th>tps</th>
 						<th>#</th>
@@ -63,7 +64,7 @@ switch($act){
 						<th>#</th>
 					</tr></thead><tbody>";
 					$no=1;
-			$query="select * from pemilih where ID_DESA=2 and SARING=0 order by NKK asc";
+			$query="select * from pemilih where ID_DESA=4 and SARING=0 order by NKK asc";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
@@ -73,9 +74,9 @@ switch($act){
 				<td>".$data['NIK']."</td>
 				<td>".$data['NAMA']."</td>
 				<td>".$data['TPS']."</td>
-				<td align='center'><a href=?syafrin=P_mongiilo&act=penyaringan&id=".$data['DP_ID'].">saring</i></a></td>
-				<td align='center'><a href=?syafrin=P_mongiilo&act=edit&id=".$data['DP_ID']."><i class='fa fa-edit'></i></a></td>
-				<td align='center'><a href='$go?syafrin=P_mongiilo&perintah=hapus&id=".$data['DP_ID']."' onclick=\"return confirm('yakin akan menghapus data ini ?')\">
+				<td align='center'><a href=?syafrin=P_owata12&act=penyaringan&id=".$data['DP_ID'].">saring</i></a></td>
+				<td align='center'><a href=?syafrin=P_owata12&act=edit&id=".$data['DP_ID']."><i class='fa fa-edit'></i></a></td>
+				<td align='center'><a href='$go?syafrin=P_owata12&perintah=hapus&id=".$data['DP_ID']."' onclick=\"return confirm('yakin akan menghapus data ini ?')\">
 				<i class='fa fa-trash-o'></i></a></td>
 			</tr>";
 			$no++;
@@ -104,7 +105,7 @@ case 'tambah' :
 						<div class='row'>
 						<div class='col-lg-6'>
 				
-								<form  role='form' class='form-group' method='post' action='$go?syafrin=P_mongiilo&perintah=simpan'>
+								<form  role='form' class='form-group' method='post' action='$go?syafrin=P_owata12&perintah=simpan'>
 									<div class='form-group'>
 									<label>DP_ID</label>
 									<input class='form-control' type='text' name='dp' size='20' style='width:300px;' placeholder='DP_ID..' >
@@ -218,7 +219,7 @@ case 'tambah' :
 			</div></div></div></div>";
 break;
 case 'edit' :
-				$er=mysqli_query($konek, "select * from pemilih where ID_DESA=2 and DP_ID='".$_GET['id']."'");
+				$er=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and DP_ID='".$_GET['id']."'");
 				$get=mysqli_fetch_array($er);
 				$kunci=$get['DP_ID'];
 				$desa=$get['ID_DESA'];
@@ -261,7 +262,7 @@ case 'edit' :
 						<div class='row'>
 						<div class='col-lg-6'>
 				
-								<form  role='form' class='form-group' method='post' action='$go?syafrin=P_mongiilo&perintah=update'>
+								<form  role='form' class='form-group' method='post' action='$go?syafrin=P_owata12&perintah=update'>
 								<input type='hidden' name='dp' value='".$get['DP_ID']."'>
 									<div class='form-group'>
 									<label>DP_ID</label>
@@ -379,11 +380,11 @@ break;
 case 'saring' : 
 		echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
+                    <h1 class='page-header'>Data Pemilih Owata Tps 2</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo'>lihat pemilih aktif</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12'>lihat pemilih aktif</button>
 			
 			<br/><br/>
 			<div class='row'>
@@ -413,7 +414,7 @@ case 'saring' :
 						
 					</tr></thead><tbody>";
 					$no=1;
-			$query="select * from pemilih where ID_DESA=2 and SARING!=0";
+			$query="select * from pemilih where ID_DESA=4 and SARING!=0";
 			$tampilku=mysqli_query($konek, $query);
 			$tanda="";
 			while($data=mysqli_fetch_array($tampilku)){
@@ -442,7 +443,7 @@ case 'saring' :
 				<td>".$data['NAMA']."</td>
 				<td>".$tanda."</td>
 				<td align='center'>".$data['JK']."</td>
-				<td align='center'><a href='$go?syafrin=P_mongiilo&perintah=kembalikan&id=".$data['DP_ID']."' onclick=\"return confirm('yakin akan mengembalikan data ini ?')\">
+				<td align='center'><a href='$go?syafrin=P_owata12&perintah=kembalikan&id=".$data['DP_ID']."' onclick=\"return confirm('yakin akan mengembalikan data ini ?')\">
 				kembalikan</a></td>
 				
 			</tr>";
@@ -458,7 +459,7 @@ case 'saring' :
 
 break;
 case 'penyaringan' :
-		$er=mysqli_query($konek, "select * from pemilih where ID_DESA=2 and DP_ID='".$_GET['id']."'");
+		$er=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and DP_ID='".$_GET['id']."'");
 				$get=mysqli_fetch_array($er);
 				
 			echo"
@@ -476,7 +477,7 @@ case 'penyaringan' :
 						<div class='panel-body'>
 						<div class='row'>
 						<div class='col-lg-6'>
-						<form  role='form' class='form-group' method='post' action='$go?syafrin=P_mongiilo&perintah=penyaringan'>
+						<form  role='form' class='form-group' method='post' action='$go?syafrin=P_owata12&perintah=penyaringan'>
 								<input type='text' name='dp' value='".$get['DP_ID']."'>
 									<div class='form-group'>
 									<label>DP_ID</label>
@@ -539,19 +540,19 @@ break;
 case 'gandanama' :
 					echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
+                    <h1 class='page-header'>Data Pemilih Owata Tps 1 Dan 2</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo'>daftar pemilih aktif</button>
-			<button type='button' class='btn' onclick='self.history.back()'>kembali</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=saring'>pemilih tersaring</button>
 			
 			<br/><br/>
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Daftar Phone Book
+                            Pemilih Ganda Nama
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -593,7 +594,7 @@ case 'gandanama' :
 						
 					</tr></thead><tbody>";
 					$no=1;
-			$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
+			$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=4 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=4 and SARING=0";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
@@ -602,8 +603,8 @@ case 'gandanama' :
 				
 				<td>".$data['NAMA']."</td>
 				<td>".$data['JML']."</td>
-				<td align='center'><a href='?syafrin=P_mongiilo&act=lihatgnama&k=".$data['NAMA']."'>lihat</a></td>
 				
+				<td align='center'><a href='?syafrin=P_owata12&act=lihatgnama&k=".$data['NAMA']."'>lihat</a></td>
 			</tr>";
 			$no++;
 			}
@@ -617,19 +618,19 @@ break;
 case 'gandanik' :
 					echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Mongiilo</h1>
+                    <h1 class='page-header'>Data Pemilih Owata Tps 1 dan 2</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo'>daftar pemilih aktif</button>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo&act=saring'>pemilih tersaring</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12&act=saring'>pemilih tersaring</button>
 			
 			<br/><br/>
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Daftar Phone Book
+                            Pemilih Ganda Nik
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -672,16 +673,18 @@ case 'gandanik' :
 						
 					</tr></thead><tbody>";
 					$no=1;
-			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
+			$query="SELECT NIK, NAMA, COUNT(*) as JML from pemilih where ID_DESA=4 and SARING=0 group by NIK HAVING COUNT(NIK) > 1";//"select * from pemilih where ID_DESA=4 and SARING=0";
 			$tampilku=mysqli_query($konek, $query);
 			
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
-				<th>".$data['NIK']."</th>
+				
+				<td>".$data['NIK']."</td>
 				<td>".$data['NAMA']."</td>
-				<td>".$data['JML']."</td>
-				<td align='center'><a href='?syafrin=P_mongiilo&act=lihatgnama&k=".$data['NIK']."'>lihat</a></td>
+				<td>".$data['JML']."</a></td>
+				<td align='center'><a href='?syafrin=P_owata12&act=lihatgnik&k=".$data['NIK']."'>lihat</a></td>
+			
 			</tr>";
 			$no++;
 			}
@@ -692,14 +695,14 @@ case 'gandanik' :
 		  </div>
 		</div></div>";
 break;
-case 'lihatgnama' : 
+case 'lihatgnik' : 
 			echo"<div class='row'>
                 <div class='col-lg-12'>
-                    <h1 class='page-header'>Data Pemilih Ganda Nama </h1>
+                    <h1 class='page-header'>Data Pemilih Ganda NIK </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_mongiilo'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata12'>daftar pemilih aktif</button>
 			<button type='button' class='btn' onclick='self.history.back()'>kembali</button>
 			
 			<br/><br/>
@@ -707,7 +710,7 @@ case 'lihatgnama' :
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-                            Desa Mongiilo
+                            Desa Owata Tps 2
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
@@ -746,13 +749,99 @@ case 'lihatgnama' :
 						<th>NKK</th>
 						<th>NIK</th>
 						<th>NAMA</th>
+						<th>TPS</th>
 						<th>TTL</th>
 						<th>ALAMAT</th>
 					</tr></thead><tbody>";
 					$no=1;
 			$k=$_GET['k'];
 			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
-			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=2 and SARING=0 and NAMA like '%$k%'");
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and SARING=0 and NIK='$k'");
+			
+			while($data=mysqli_fetch_array($tampilku)){
+				echo"<tr>
+				<td>$no</td>
+				
+				<td align='center'>".$data['NKK']."</td>
+				<td align='center'>".$data['NIK']."</td>
+				<td align='center'>".$data['NAMA']."</td>
+				<td align='center'>".$data['TPS']."</td>
+				<td align='center'>".$data['TTL']."</td>
+				<td align='center'>".$data['ALAMAT']."</td>
+				
+			</tr>";
+			$no++;
+			}
+			echo"</tbody></table>
+			</div>
+			  </div>
+			</div>
+		  </div>
+		</div></div>";
+
+break;
+case 'lihatgnama' : 
+			echo"<div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='page-header'>Data Pemilih Ganda Nama </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			<button type='button' class='btn' onclick=window.location.href='?syafrin=P_owata1'>daftar pemilih aktif</button>
+			<button type='button' class='btn' onclick='self.history.back()'>kembali</button>
+			
+			<br/><br/>
+			<div class='row'>
+            <div class='col-lg-12'>
+			<div class='panel panel-default'>
+				<div class='panel-heading'>
+                            Pemilih Ganda Nama
+                </div>";
+				$state=isset($_GET['state']) ? $_GET['state'] : '';
+				if($state == 'berhasil'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data Berhasil disimpan
+							</div>";
+				}else if($state == 'gagal'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data gagal disimpan
+							</div>";
+				}else if($state == 'ubah'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil diubah
+							</div>";
+				}else if($state == 'hapus'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dihapus
+							</div>";
+				}else if($state == 'kembali'){
+						echo"<div class='panel-body'>
+								<div class='alert alert-success'>
+                                Data berhasil dikembalikan
+							</div>";
+				}
+				
+                echo"<div class='table-responsive'>
+			<table class='table table-striped table-bordered table-hover' id='dataTables-example'>
+				<thead>
+					<tr>
+						<th>no</th>
+						
+						<th>NKK</th>
+						<th>NIK</th>
+						<th>NAMA</th>
+						<th>TPS</th>
+						<th>TTL</th>
+						<th>ALAMAT</th>
+					</tr></thead><tbody>";
+					$no=1;
+			$k=$_GET['k'];
+			//$query="SELECT NAMA, COUNT(*) as JML from pemilih where ID_DESA=2 and SARING=0 group by NAMA HAVING COUNT(NAMA) > 1";//"select * from pemilih where ID_DESA=2 and SARING=0";
+			$tampilku=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and SARING=0 and NAMA like '%$k%'");
 			
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
@@ -761,6 +850,7 @@ case 'lihatgnama' :
 				<td>".$data['NKK']."</td>
 				<td>".$data['NIK']."</td>
 				<td align='center'>".$data['NAMA']."</td>
+				<td align='center'>".$data['TPS']."</td>
 				<td align='center'>".$data['TTL']."</td>
 				<td align='center'>".$data['ALAMAT']."</td>
 			</tr>";
@@ -774,5 +864,6 @@ case 'lihatgnama' :
 		</div></div>";
 
 break;
+
 }
 ?>

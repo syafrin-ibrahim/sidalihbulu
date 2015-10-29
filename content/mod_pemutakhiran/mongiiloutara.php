@@ -54,8 +54,8 @@ switch($act){
 				<thead>
 					<tr>
 						<th>no</th>
-						<th>nik</th>
 						<th>nkk</th>
+						<th>nik</th>
 						<th>nama</th>
 						<th>tps</th>
 						<th>#</th>
@@ -69,8 +69,8 @@ switch($act){
 			while($data=mysqli_fetch_array($tampilku)){
 				echo"<tr>
 				<td>$no</td>
-				<td>".$data['NIK']."</td>
 				<td>".$data['NKK']."</td>
+				<td>".$data['NIK']."</td>
 				<td>".$data['NAMA']."</td>
 				<td>".$data['TPS']."</td>
 				<td align='center'><a href=?syafrin=P_mongiiloutara&act=penyaringan&id=".$data['DP_ID'].">saring</i></a></td>
