@@ -18,9 +18,11 @@ switch($act){
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'>
-                            Data Pemilih
-                </div>";
+				<div class='panel-heading'>";
+				$fg=mysqli_query($konek, "select * from pemilih where saring=0");
+				$jml=mysqli_num_rows($fg);
+				echo" Jumlah Pemilih Kecamatan Bulango Ulu &nbsp; &nbsp;<strong> $jml</strong>";
+                echo"</div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
 						echo"<div class='panel-body'>

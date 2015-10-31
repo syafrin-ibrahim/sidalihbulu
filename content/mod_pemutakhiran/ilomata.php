@@ -18,9 +18,11 @@ switch($act){
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'>
-                            Daftar Phone Book
-                </div>";
+				<div class='panel-heading'>";
+                 $fg=mysqli_query($konek, "select * from pemilih where ID_DESA=1 and saring=0");
+				$jml=mysqli_num_rows($fg);
+				echo" Jumlah Pemilih Desa Ilomata &nbsp; &nbsp;<strong> $jml</strong>";                    
+                echo"</div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
 						echo"<div class='panel-body'>
@@ -156,11 +158,11 @@ case 'tambah' :
 						<div class='col-lg-6'>
 									<div class='form-group'>
 										<label>Jenis Kelamin</label>&nbsp;<br/>
-										<input type='radio' name='jk' value='pria' checked>pria 
+										<input type='radio' name='jk' value='P' checked>pria 
 										
 										
 									
-										<input type='radio' name='jk' value='wanita'>wanita
+										<input type='radio' name='jk' value='W'>wanita
 										
 									</div>
 									
@@ -184,7 +186,7 @@ case 'tambah' :
 											<option value='2'>Tuna Netra</option>
 											<option value='3'>Tuna Rungu/Wicara</option>
 											<option value='4'>Tuna Grahita</option>
-											<option value='4'>Disabilitas Lain</option>
+											<option value='5'>Disabilitas Lain</option>
 											</select>
 									</div>
 									

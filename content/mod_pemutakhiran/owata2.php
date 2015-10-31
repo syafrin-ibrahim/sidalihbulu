@@ -18,9 +18,11 @@ switch($act){
 			<div class='row'>
             <div class='col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'>
-                            Daftar Phone Book
-                </div>";
+				<div class='panel-heading'>";
+                 $fg=mysqli_query($konek, "select * from pemilih where ID_DESA=4 and TPS=2 and saring=0");
+				$jml=mysqli_num_rows($fg);
+				echo" Jumlah Pemilih Desa Owata TPS 2 &nbsp; &nbsp;<strong> $jml</strong>";           
+                echo"</div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
 						echo"<div class='panel-body'>

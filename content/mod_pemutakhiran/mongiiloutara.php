@@ -23,7 +23,7 @@ switch($act){
 					$gh=mysqli_query($konek, $queryx);
 					$jml=mysqli_num_rows($gh);
 					
-                 echo"    Jumlah Daftar Pemilih $jml
+                 echo"    Jumlah Daftar Pemilih Mongiilo Utara <strong>$jml</strong>
                 </div>";
 				$state=isset($_GET['state']) ? $_GET['state'] : '';
 				if($state == 'berhasil'){
