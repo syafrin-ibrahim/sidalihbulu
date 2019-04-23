@@ -60,7 +60,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SIDALIH VERSI BETA @Copyright syafrin 15 October 2015</a>
+                <a class="navbar-brand" href="index.html">SIDALIH VERSI 1.0.1 2019 @Copyright syafrin ibrahim 23 Agustus 2019</a>
             </div>
             <!-- /end navigasi atas kiri  -->
 			<!-- navigasi atas kiri -->
